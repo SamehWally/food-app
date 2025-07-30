@@ -1,1 +1,60 @@
 /* You can add global styles to this file, and also import other style files */
+
+section {
+  background-image: url(assets/images/auth-bg.png);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  .auth-component {
+    padding-block: 40px;
+    padding-inline: 20px;
+    background-color: #fff;
+    width: 80%;
+    border-radius: 16px;
+
+    h3 {
+      color: #494949;
+      font-size: 25px;
+    }
+    p {
+      color: #49494999;
+    }
+    i {
+      color: #49494999;
+    }
+  }
+
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .link-green {
+      color: #4aa35a;
+      text-decoration: none;
+    }
+  }
+}
+
+button {
+  border: none;
+  padding: 10px 25px;
+  &.btn-green {
+    background-color: #009247;
+    color: #fff;
+    border-radius: 8px;
+    width: 70%;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+  &.btn-red {
+    background-color: transparent;
+    color: red;
+    border: 1px solid red;
+  }
+}
+
+a:hover {
+  cursor: pointer;
+}

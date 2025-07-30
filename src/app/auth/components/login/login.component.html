@@ -1,0 +1,65 @@
+<section>
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="auth-component">
+        <div class="logo text-center">
+          <img src="../../../../assets/images/logo.svg" alt="" />
+        </div>
+
+        <div class="form-content">
+          <h3>Log In</h3>
+          <p>Welcome Back! Please enter your details</p>
+
+          <form [formGroup]="loginForm" (ngSubmit)="login(loginForm)">
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa-solid fa-mobile-screen"></i>
+              </span>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="email"
+                aria-label="email"
+                aria-describedby="basic-addon1"
+                formControlName="email"
+              />
+            </div>
+
+            <div class="input-group mb-3">
+              <span class="input-group-text" id="basic-addon1">
+                <i class="fa-solid fa-lock"></i>
+              </span>
+              <input
+                [type]="isHide ? 'password' : 'text'"
+                class="form-control"
+                placeholder="password"
+                aria-label="password"
+                aria-describedby="basic-addon1"
+                formControlName="password"
+              />
+              <a class="input-group-text" (click)="isHide = !isHide">
+                <span id="basic-addon1">
+                  <i
+                    class="fa-solid"
+                    [class]="isHide ? 'fa-eye-slash' : 'fa-eye'"
+                  ></i>
+                </span>
+              </a>
+            </div>
+
+            <div class="links">
+              <a class="link-green" routerLink="/auth/register"
+                >Register Now?</a
+              >
+              <a>Forgot Password?</a>
+            </div>
+
+            <div class="text-center">
+              <button class="btn-green">Login</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

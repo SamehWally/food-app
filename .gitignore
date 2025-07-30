@@ -1,4 +1,21 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
+# Angular build & environment
+/dist/
+/node_modules/
+/tmp/
+/.env
+
+# IDE & OS-specific
+.vscode/
+*.log
+*.DS_Store
+Thumbs.db
+
+# Dependency directories
+package-lock.json
+
+# Angular environment files
+src/environments/*.ts
 
 # Compiled output
 /dist

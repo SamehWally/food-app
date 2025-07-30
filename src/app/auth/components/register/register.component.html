@@ -1,0 +1,164 @@
+<section>
+  <div class="container h-100">
+    <div class="row h-100 justify-content-center align-items-center">
+      <div class="auth-component">
+        <div class="logo text-center">
+          <img src="../../../../assets/images/logo.svg" alt="" />
+        </div>
+
+        <div class="form-content">
+          <h3>Register</h3>
+          <p>Welcome Back! Please enter your details</p>
+
+          <form [formGroup]="registerForm" (ngSubmit)="register(registerForm)">
+            <div class="row">
+              <div class="col-md-8 mx-auto my-3">
+                <ngx-dropzone (change)="onSelect($event)" [multiple]="false">
+                  <ngx-dropzone-image-preview
+                    ngProjectAs="ngx-dropzone-preview"
+                    *ngFor="let f of files"
+                    [file]="f"
+                  >
+                  </ngx-dropzone-image-preview>
+                  <ngx-dropzone-preview
+                    *ngFor="let f of files"
+                    [removable]="true"
+                    (removed)="onRemove(f)"
+                  >
+                    <ngx-dropzone-label
+                      >{{ f.name }} ({{ f.type }})</ngx-dropzone-label
+                    >
+                  </ngx-dropzone-preview>
+                </ngx-dropzone>
+              </div>
+              <div class="col-md-6">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="userName"
+                    aria-label="userName"
+                    aria-describedby="basic-addon1"
+                    formControlName="userName"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="email"
+                    aria-label="email"
+                    aria-describedby="basic-addon1"
+                    formControlName="email"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="country"
+                    aria-label="country"
+                    aria-describedby="basic-addon1"
+                    formControlName="country"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="fa-solid fa-mobile-screen"></i>
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="phoneNumber"
+                    aria-label="phoneNumber"
+                    aria-describedby="basic-addon1"
+                    formControlName="phoneNumber"
+                  />
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="fa-solid fa-lock"></i>
+                  </span>
+                  <input
+                    [type]="isHide ? 'password' : 'text'"
+                    class="form-control"
+                    placeholder="password"
+                    aria-label="password"
+                    aria-describedby="basic-addon1"
+                    formControlName="password"
+                  />
+                  <a class="input-group-text" (click)="isHide = !isHide">
+                    <span id="basic-addon1">
+                      <i
+                        class="fa-solid"
+                        [class]="isHide ? 'fa-eye-slash' : 'fa-eye'"
+                      ></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="col-md-6">
+                <div class="input-group mb-3">
+                  <span class="input-group-text" id="basic-addon1">
+                    <i class="fa-solid fa-lock"></i>
+                  </span>
+                  <input
+                    [type]="isHide ? 'password' : 'text'"
+                    class="form-control"
+                    placeholder="confirmPassword"
+                    aria-label="confirmPassword"
+                    aria-describedby="basic-addon1"
+                    formControlName="confirmPassword"
+                  />
+                  <a
+                    class="input-group-text"
+                    (click)="isHideConfirmPassword = !isHideConfirmPassword"
+                  >
+                    <span id="basic-addon1">
+                      <i
+                        class="fa-solid"
+                        [class]="
+                          isHideConfirmPassword ? 'fa-eye-slash' : 'fa-eye'
+                        "
+                      ></i>
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="links justify-content-end">
+              <a class="link-green" routerLink="/auth/login">Login Now?</a>
+            </div>
+
+            <div class="text-center">
+              <button class="btn-green">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
